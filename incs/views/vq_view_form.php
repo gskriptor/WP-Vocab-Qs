@@ -18,7 +18,7 @@ function finder_form() {
                }
 
             }
-
+   //selection part of form
     echo '</select>
       </div>
       <div class="fField">
