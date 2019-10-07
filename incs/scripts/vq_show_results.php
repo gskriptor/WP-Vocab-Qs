@@ -1,3 +1,4 @@
+
 <?php
 
 function vq_show_results() {
