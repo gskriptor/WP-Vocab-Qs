@@ -1,4 +1,3 @@
-
 <?php
 
 function vq_show_results() {
@@ -21,13 +20,11 @@ function vq_show_results() {
     $sanswt = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_student_answers WHERE exam_id = $x_id", ARRAY_A);
     $answ = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_answer", ARRAY_A);
 
-    $examTakes = $wpdb->get_results( "SELECT user_id FROM {$wpdb->prefix}watupro_taken_exams WHERE exam_id = $x_id", ARRAY_A);
-
+    $examTakes = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_taken_exams WHERE exam_id = $x_id", ARRAY_A);
 
     //Top 10 students sql query
     $topStudents = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_taken_exams WHERE exam_id = $x_id ORDER BY percent_points DESC LIMIT 10", ARRAY_A);
     $allStudents = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_taken_exams WHERE exam_id = $x_id ORDER BY percent_points DESC", ARRAY_A);
-
 
     $maxPoints = $maxScore[0]['MAX(max_points)'];
 
@@ -97,12 +94,17 @@ echo '<br><center><h2>QUESTIONS</h2></center>';
 
     $q_id = (int)$quests['ID'];
     //This collects the total number of student answers given per a question
-    $answ_perQuest = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_student_answers WHERE question_id = $q_id", ARRAY_A);
+    $answ_perQuest = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_student_answers WHERE question_id = $q_id", ARRAY_A);
 
     //This collects the total number of correct student answers given per a question
-    $corrAnsw_perQuest = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_student_answers WHERE question_id = $q_id AND is_correct = 1", ARRAY_A);
+    $corrAnsw_perQuest = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_student_answers WHERE question_id = $q_id AND is_correct = 1", ARRAY_A);
     $totalCorrAnsw_perQuest = count($corrAnsw_perQuest);
     $totalAnsw_perQuest = count($answ_perQuest);
+
+//var_dump($corrAnsw_perQuest);
+echo '<br>';
+//var_dump($answ_perQuest);
+
 echo '<div>';
 
     $percentCorrPerQ = ($totalCorrAnsw_perQuest * 100) / $totalAnsw_perQuest;
@@ -125,6 +127,8 @@ echo '</table>';
 
     $studAnsw = count($answ_perQuest);
   echo '<table class="TFtable">';
+
+//loop through answer data for output
     foreach($answ as $answs) {
 
       if($quests['ID'] == $answs['question_id']) {
@@ -140,9 +144,12 @@ echo '</table>';
           $ansQ_id = $answs['question_id'];
 
           //This holds the total number of student selections for each respective answers
-          $sacount = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_student_answers WHERE exam_id = $x_id AND answer = '$a_id'", ARRAY_A);
+          $sacount = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_student_answers WHERE exam_id = $x_id AND answer = '$a_id' AND question_id = '$ansQ_id'", ARRAY_A);
           //This holds the total number of student answers per the whole question
-          $sacountT = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}watupro_student_answers WHERE exam_id = $x_id AND question_id = '$ansQ_id'", ARRAY_A);
+          $sacountT = $wpdb->get_results( "SELECT DISTINCT user_id FROM {$wpdb->prefix}watupro_student_answers WHERE exam_id = $x_id AND question_id = '$ansQ_id'", ARRAY_A);
+
+//debug break
+//var_dump($sacount);
 
           $studSelAnsw = count($sacount);
 
@@ -257,7 +264,7 @@ echo '</div>';
 
       }
 
-      
+
       echo '</table>';
       echo '</div>';
   }
