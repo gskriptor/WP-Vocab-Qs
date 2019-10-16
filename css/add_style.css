@@ -1,0 +1,198 @@
+.bFont {
+	font-size: 24px;
+}
+.sbFont {
+	font-size: 44px;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+.wpuf_first_name_11045 {
+	height: 40px;
+}
+
+.wpuf_last_name_11045 {
+	height: 40px;
+}
+
+.wpuf_text_1_11045 {
+	height: 40px;
+}
+
+.btn-primary {
+	font-size: 15px;
+border: none !important;
+display: block;
+color: #e46b25;
+
+line-height: 1em !important;
+padding: 16px 20px !important;
+text-decoration: none !important;
+text-align: center;
+text-transform: none !important;
+font-weight: normal !important;
+overflow: hidden;
+position: relative;
+
+transition: 0.25s;
+box-sizing: border-box;
+-moz-border-radius: 4px !important;
+-webkit-border-radius: 4px !important;
+border-radius: 4px !important;
+-webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+opacity: 1;
+	color: #ffffff;
+	background: #2CA7DF;
+}
+.kidzoo-breadcrumb {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+
+.wp-block-button__link {
+			font-size: 24px;
+border: none !important;
+display: block;
+width: 28%;
+line-height: 1em !important;
+padding: 16px 20px !important;
+text-decoration: none !important;
+text-align: center;
+text-transform: none !important;
+font-weight: normal !important;
+overflow: hidden;
+position: relative;
+
+transition: 0.25s;
+box-sizing: border-box;
+-moz-border-radius: 4px !important;
+-webkit-border-radius: 4px !important;
+/*border-radius: 28px !important;*/
+-webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+opacity: 1;
+	color: white;
+	background: #2CA7DF;
+	margin: auto;
+}
+
+.wp-block-button__link a {
+	color: white;
+	font-size: 24px;
+}
+
+.examSorter {
+	font-size: 64px;
+}
+
+.wpuf_month_of_birth_11045 {
+	float: left;
+	height: 164px;
+}
+.wpuf_day_of_birth_11045 {
+	float: left;
+}
+.wpuf_year_of_birth_11045 {
+	float: left;
+}
+
+.dropout {
+	background-color: rgba(0, 0, 0, 0);
+	border-style: solid;
+	border-color: #e46b25;
+	color: #e46b25;
+}
+
+style ul.wpuf-form .wpuf-fields select, .wpuf-form-add.wpuf-style ul.wpuf-form .wpuf-fields select {
+	height: 40px;
+}
+
+.wp-block-button__link {
+		background-color: #3ba1da;
+	border-style: solid;
+	border-color: #e46b25;
+	color: white;
+	font-size: 24px;
+}
+
+.answer {
+	font-size: 20px;
+}
+
+.question-content {
+	font-size: 20px;
+}
+
+.um .um-button {
+	color: white;
+	border-radius: 44px;
+}
+
+.select2.select2-container .select2-selection {
+	width: 160%;
+}
+
+.wpuf-form-add.wpuf-style ul.wpuf-form .wpuf-submit input[type=submit] {
+	background: #2CA7DF;
+}
+.single .nav-links {
+    display: none;
+}
+
+.question-content p {
+	font-size: 24px;
+}
+
+.kidzoo-footer div {
+	background-color: #333333;
+}
+
+.kidzoo-footer .kidzoo-footer-copyright {
+	background-color: #333333;
+}
+
+.page-header h1{
+	display: none;
+}
+
+.post-navigation {
+    display: none;
+}
+.single-entry-meta {
+	display: none;
+}
+#timeNag {
+	font-size: 28px;
+}
+.watupro-exam-description p {
+	font-size: 28px;
+}
+
+.lFloater {
+	float: left;
+	width: 60px;
+}
+
+	  .TFtable{
+		width:100%;
+		border-collapse:collapse;
+	  }
+	  .TFtable td{
+		padding:7px; border:#4e95f4 1px solid;
+	  }
+	  /* provide some minimal visual accomodation for IE8 and below */
+	  .TFtable tr{
+		background: #b8d1f3;
+	  }
+	  /*  Define the background color for all the ODD background rows  */
+	  .TFtable tr:nth-child(odd){
+		background: #b8d1f3;
+	  }
+	  /*  Define the background color for all the EVEN background rows  */
+	  .TFtable tr:nth-child(even){
+		background: #dae5f4;
+	  }
