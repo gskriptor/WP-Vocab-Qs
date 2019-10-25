@@ -4,7 +4,7 @@
 function post_results() {
 
 $pName = $_POST['exam'];
-
+$sName = $_POST['school'];
    global $wpdb;
 
    $exam_sel = $wpdb->get_results( "SELECT ID FROM {$wpdb->prefix}watupro_master WHERE name = '$pName'", ARRAY_A);
@@ -201,8 +201,8 @@ $result_content2 .= '
 
 
 
-
-   $teacher = $wpdb->get_results( "SELECT DISTINCT meta_value FROM {$wpdb->prefix}usermeta WHERE meta_key = 'teacher_of_student'", ARRAY_A);
+   $stName = $sName.'_teacher';
+   $teacher = $wpdb->get_results( "SELECT DISTINCT meta_value FROM {$wpdb->prefix}usermeta WHERE meta_key = '$stName'", ARRAY_A);
 
    foreach($teacher as $teachers) {
 

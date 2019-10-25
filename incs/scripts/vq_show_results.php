@@ -3,6 +3,7 @@
 function vq_show_results() {
 
     $pName = $_POST['exam'];
+    $sName = $_POST['school'];
 
     global $wpdb;
 
@@ -205,8 +206,8 @@ echo '</table>';
 echo '</div>';
 echo '</div>';
 
-
-   $teacher = $wpdb->get_results( "SELECT DISTINCT meta_value FROM {$wpdb->prefix}usermeta WHERE meta_key = 'teacher_of_student'", ARRAY_A);
+   $stName = $sName.'_teacher';
+   $teacher = $wpdb->get_results( "SELECT DISTINCT meta_value FROM {$wpdb->prefix}usermeta WHERE meta_key = '$stName'", ARRAY_A);
 
    foreach($teacher as $teachers) {
 
@@ -228,15 +229,13 @@ echo '</div>';
          }
 
       }
-      echo $stud_count;
+      //echo $stud_count;
       $disTeacher = 'hide';
       if($stud_count > 0) {
         $disTeacher = '';
-        echo 'show this';
       }
       else {
         $disTeacher = 'hide';
-        echo 'hide this';
       }
 
       echo '<div class="'.$disTeacher.'">';
@@ -263,14 +262,9 @@ echo '</div>';
                echo '<td>'.$curr_stud_id[0]['user_login'].'</td>';
                echo '</tr>';
          }
-
       }
-
-
       echo '</table>';
       echo '</div>';
   }
-
 }
-
 ?>
